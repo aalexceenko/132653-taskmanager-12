@@ -114,7 +114,7 @@ const createSortTemplate = () => {
       <a href="#" class="board__filter" data-sort-type="date-up">SORT BY DATE up</a>
       <a href="#" class="board__filter" data-sort-type="date-down">SORT BY DATE down</a>
     </div>`
-  )
+  );
 };
 
 const createBoardTaskTemplate = () => {
@@ -380,31 +380,27 @@ const createLoadMoreButtonTemplate = () => {
 };
 
 const render = (container, template, place) => {
-    container.insertAdjacentHTML(place, template);
-}
+  container.insertAdjacentHTML(place, template);
+};
 
-const siteMainElement = document.querySelector('.main');
-const siteHeaderElement = siteMainElement.querySelector('.main__control');
+const siteMainElement = document.querySelector(`.main`);
+const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 
-render(siteHeaderElement, createSiteMenuTemplate(), 'beforeend');
-render(siteMainElement, createFilterTemplate(), 'beforeend');
-render(siteMainElement, createBoardTemplate(), 'beforeend');
+render(siteHeaderElement, createSiteMenuTemplate(), `beforeend`);
+render(siteMainElement, createFilterTemplate(), `beforeend`);
+render(siteMainElement, createBoardTemplate(), `beforeend`);
 
 const boardElement = siteMainElement.querySelector(`.board`);
 
-render(boardElement, createSortTemplate(), 'beforeend');
-render(boardElement, createBoardTaskTemplate(), 'beforeend');
+render(boardElement, createSortTemplate(), `beforeend`);
+render(boardElement, createBoardTaskTemplate(), `beforeend`);
 
 const taskListElement = boardElement.querySelector(`.board__tasks`);
 
-render(taskListElement, createTaskEditTemplate(), 'beforeend');
+render(taskListElement, createTaskEditTemplate(), `beforeend`);
 
 for (let i = 0; i < TASK_COUNT; i++) {
   render(taskListElement, createTaskTemplate(), `beforeend`);
 }
 
 render(boardElement, createLoadMoreButtonTemplate(), `beforeend`);
-
-
-
-
