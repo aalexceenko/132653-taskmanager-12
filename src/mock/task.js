@@ -15,9 +15,9 @@ const generateDescription = () => {
 };
 
 const generateDate = () => {
-  const isDate = Boolean(getRandomInteger(0, 1));
+  const hasDate = Boolean(getRandomInteger(0, 1));
 
-  if (!isDate) {
+  if (!hasDate) {
     return null;
   }
 
