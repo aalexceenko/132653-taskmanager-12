@@ -12,7 +12,7 @@ const getCurrentDate = () => {
   return currentDate;
 };
 
-export const isTaskExpired = (dueDate) => {
+export const isExpired = (dueDate) => {
   if (dueDate === null) {
     return false;
   }
@@ -22,15 +22,15 @@ export const isTaskExpired = (dueDate) => {
   return currentDate.getTime() > dueDate.getTime();
 };
 
-export const isTaskRepeating = (repeating) => {
+export const isRepeate = (repeating) => {
   return Object.values(repeating).some(Boolean);
 };
 
-export const humanizeTaskDueDate = (dueDate) => {
+export const humanizeDueDate = (dueDate) => {
   return dueDate.toLocaleString(`en-US`, {day: `numeric`, month: `long`});
 };
 
-export const isTaskExpiringToday = (dueDate) => {
+export const isExpireToday = (dueDate) => {
   if (dueDate === null) {
     return false;
   }
