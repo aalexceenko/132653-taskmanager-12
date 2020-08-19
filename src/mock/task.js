@@ -1,5 +1,5 @@
 import {COLORS} from "../const.js";
-import {getRandomInteger} from "../utils.js";
+import {getRandomInteger} from "../utils/common.js";
 
 
 const generateDescription = () => {
@@ -70,7 +70,7 @@ export const generateTask = () => {
     dueDate,
     repeating,
     color: getRandomColor(),
-    isArchive: true,
+    isArchive: Boolean(getRandomInteger(0, 1)),
     isFavorite: Boolean(getRandomInteger(0, 1))
   };
 };
