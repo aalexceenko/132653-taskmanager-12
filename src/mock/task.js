@@ -50,6 +50,8 @@ const getRandomColor = () => {
   return COLORS[randomIndex];
 };
 
+const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
+
 
 export const generateTask = () => {
   const dueDate = generateDate();
@@ -66,6 +68,7 @@ export const generateTask = () => {
     };
 
   return {
+    id: generateId(),
     description: generateDescription(),
     dueDate,
     repeating,
@@ -74,4 +77,5 @@ export const generateTask = () => {
     isFavorite: Boolean(getRandomInteger(0, 1))
   };
 };
+
 
