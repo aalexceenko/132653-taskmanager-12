@@ -74,13 +74,13 @@ export default class Task {
     document.addEventListener(`keydown`, this._onEscKeyDownHandler);
     this._changeMode();
     this._mode = Mode.EDITING;
-  };
+  }
 
   _replaceFormToCard() {
     replace(this._taskComponent, this._taskEditComponent);
     document.removeEventListener(`keydown`, this._onEscKeyDownHandler);
     this._mode = Mode.DEFAULT;
-  };
+  }
 
   _onEscKeyDownHandler(evt) {
     if (evt.key === `Escape` || evt.key === `Esc`) {
@@ -88,7 +88,7 @@ export default class Task {
       this._taskEditComponent.reset(this._task);
       this._replaceFormToCard();
     }
-  };
+  }
 
   _handleEditClick() {
     this._replaceCardToForm();

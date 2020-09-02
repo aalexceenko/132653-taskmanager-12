@@ -50,7 +50,7 @@ const getRandomColor = () => {
   return COLORS[randomIndex];
 };
 
-const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
+const generateId = () => `_` + Math.random().toString(36).substr(2, 9);
 
 
 export const generateTask = () => {

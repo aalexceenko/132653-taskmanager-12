@@ -69,7 +69,7 @@ export default class Board {
         this._boardTasks = this._sourcedBoardTasks.slice();
 
     }
-    console.log(this._boardTasks);
+
     this._currentSortType = sortType;
   }
 
@@ -95,7 +95,7 @@ export default class Board {
 
     const taskPresenter = new TaskPresenter(this._taskListComponent, this._handleTaskChange, this._handleModeChange);
     taskPresenter.init(task);
-    console.log(this._taskPresenter[task.id]);
+
     this._taskPresenter[task.id] = taskPresenter;
   }
 
@@ -125,12 +125,10 @@ export default class Board {
   }
 
   _clearTaskList() {
-    // this._taskListComponent.getElement().innerHTML = ``;
     Object
       .values(this._taskPresenter)
       .forEach((presenter) => presenter.destroy());
     this._taskPresenter = {};
-    console.log(this._taskListComponent.getElement());
     this._renderedTaskCount = TASK_COUNT_PER_STEP;
   }
 
