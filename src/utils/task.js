@@ -1,3 +1,4 @@
+import moment from "moment";
 
 const getCurrentDate = () => {
   const currentDate = new Date();
@@ -20,8 +21,12 @@ export const isRepeate = (repeating) => {
   return Object.values(repeating).some(Boolean);
 };
 
-export const humanizeDueDate = (dueDate) => {
-  return dueDate.toLocaleString(`en-US`, {day: `numeric`, month: `long`});
+export const formatTaskDueDate = (dueDate) => {
+  if (!(dueDate instanceof Date)) {
+    return ``;
+  }
+
+  return moment(dueDate).format(`D MMMM`);
 };
 
 export const isExpireToday = (dueDate) => {
