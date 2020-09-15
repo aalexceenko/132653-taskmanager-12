@@ -1,5 +1,6 @@
 import {isExpired, isRepeate, formatTaskDueDate} from "../utils/task.js";
 import AbstractView from "./abstract.js";
+import he from "he";
 
 
 const createTaskTemplate = (task) => {
@@ -49,7 +50,7 @@ const createTaskTemplate = (task) => {
           </div>
 
           <div class="card__textarea-wrap">
-            <p class="card__text">${description}</p>
+            <p class="card__text">${he.encode(description)}</p>
           </div>
 
           <div class="card__settings">
