@@ -82,3 +82,6 @@ export const isDatesEqual = (dateA, dateB) => {
 
   return moment(dateA).isSame(dateB, `day`);
 };
+
+
+export const generateId = () => `_` + Math.random().toString(36).substr(2, 9);
